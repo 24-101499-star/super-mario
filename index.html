@@ -10,7 +10,7 @@
     <title>suber-mario</title>
 </head>
 <body>
-        <div id="videoOverlay" class="video-overlay">
+        <!-- <div id="videoOverlay" class="video-overlay">
         <video id="introVideo" autoplay muted playsinline>
             <source src="img/videoplayback.mp4" type="video/mp4">
         </video>
@@ -18,7 +18,7 @@
             <source src="img/videoplayback.weba" type="audio/webm">
         </audio>
         <div id="soundNotice" class="sound-notice hidden"></div>
-        </div>
+        </div> -->
 
       <header id="marioHeader">
     <nav id="marioNav">
@@ -50,9 +50,212 @@
             <img src="img/Whimsical Terracotta Brick Platform 1.png" alt="" srcset="">
             
         </section>
+
+       <section class="s-3">
+    <span  id="sub-title" class="sub-title"></span>
+    <h1 id="main-title"class="main-title"></h1>
+    <p id="description" class="description">
        
-     
+    
+   
+    <div class="cards-container" id="cardsContainer"></div>
+</section>
+       
+    <section class="s-2">
+            <img src="img/Whimsical Terracotta Brick Platform 1.png" alt="" srcset="">
+            
+        </section>
+
+        <footer>
+            <img src="Super Mario Bro's (1366x768) 1_imgupscaler.ai_General_4K.jpg" alt="">
+        </footer>
     <script>
+
+        
+
+        let persons = [
+    { 
+        name: "Mario", 
+        age: 26, 
+        specialist: "Plumber & Hero of Mushroom Kingdom", 
+        city: "Mushroom Kingdom", 
+        email: "mario@plumbing.com", 
+        bio: "The famous hero of the Mushroom Kingdom, known for his high jumping skills and bravery in saving Princess Peach.", 
+        img: "img/mario-card.png" 
+    },
+    { 
+        name: "Luigi", 
+        age: 24, 
+        specialist: "Ghost Hunter & Plumber", 
+        city: "Mushroom Kingdom", 
+        email: "luigi@plumbing.com", 
+        bio: "Mario's younger brother, known for his tall stature, high jumps, and ghost-hunting expertise despite his fears.", 
+        img: "img/luigi-card.png" 
+    },
+    { 
+        name: "Princess Peach", 
+        age: 25, 
+        specialist: "Ruler of Mushroom Kingdom", 
+        city: "Peach's Castle", 
+        email: "peach@royalty.com", 
+        bio: "The kind ruler of the Mushroom Kingdom, characterized by her gentleness and the unique ability to float in mid-air.", 
+        img: "img/peach-card.png" 
+    },
+    { 
+        name: "Yoshi", 
+        age: 18, 
+        specialist: "Dinosaur & Loyal Friend", 
+        city: "Yoshi's Island", 
+        email: "yoshi@dino.com", 
+        bio: "A friendly and loyal green dinosaur who can swallow enemies, turn them into eggs, and jump long distances.", 
+        img: "img/yoshi-card.png" 
+    },
+    { 
+        name: "Bowser", 
+        age: 45, 
+        specialist: "King of the Koopas & Main Rival", 
+        city: "Bowser's Castle", 
+        email: "bowser@king.com", 
+        bio: "The villainous King of the Koopas who possesses immense strength, breathes fire, and constantly tries to conquer the castle.", 
+        img: "img/bowser-card.png" 
+    },
+    { 
+        name: "Toad", 
+        age: 20, 
+        specialist: "Advisor & Guard Captain", 
+        city: "Toad Town", 
+        email: "toad@mushroom.com", 
+        bio: "A loyal resident of the Mushroom Kingdom, distinguished by his mushroom-shaped head, high energy, and speed.", 
+        img: "img/toad-card.png" 
+    },
+    { 
+        name: "Toadette", 
+        age: 19, 
+        specialist: "Exploration & Adventure Expert", 
+        city: "Toad Town", 
+        email: "toadette@mushroom.com", 
+        bio: "A bright and cheerful pink mushroom girl who loves music, adventure, and helping organize events.", 
+        img: "img/toadette-card.png" 
+    },
+    { 
+        name: "Princess Daisy", 
+        age: 23, 
+        specialist: "Ruler of Sarasaland", 
+        city: "Sarasaland", 
+        email: "daisy@royalty.com", 
+        bio: "An energetic and athletic princess, close friend of Peach, known for her strong and cheerful personality.", 
+        img: "img/daisy-card.png" 
+    },
+    { 
+        name: "Wario", 
+        age: 35, 
+        specialist: "Treasure Hunter & Mario's Rival", 
+        city: "Diamond City", 
+        email: "wario@gold.com", 
+        bio: "Mario's arch-rival who loves money and gold, possessing immense physical strength and a sarcastic personality.", 
+        img: "img/wario-card.png" 
+    },
+    { 
+        name: "Waluigi", 
+        age: 33, 
+        specialist: "Game Expert & Luigi's Rival", 
+        city: "Diamond City", 
+        email: "waluigi@mischief.com", 
+        bio: "Wario's tall and thin partner who constantly challenges Luigi in various competitions and sports.", 
+        img: "img/waluigi-card.png" 
+    },
+    { 
+        name: "Rosalina", 
+        age: 100, 
+        specialist: "Protector of Galaxies & Stars", 
+        city: "Comet Observatory", 
+        email: "rosalina@galaxy.com", 
+        bio: "Protector of the cosmos and loving mother to the Lumas, known for her wisdom and mastery of space magic.", 
+        img: "img/rosalina-card.png" 
+    },
+    { 
+        name: "Bowser Jr.", 
+        age: 12, 
+        specialist: "Prince & Machine Inventor", 
+        city: "Bowser's Castle", 
+        email: "junior@bowser.com", 
+        bio: "Bowser's favorite son, who uses his Junior Clown Car and Magic Paintbrush to help his father.", 
+        img: "img/bowser-jr-card.png" 
+    },
+    { 
+        name: "Donkey Kong", 
+        age: 30, 
+        specialist: "Island Guardian & Strongman", 
+        city: "DK Island", 
+        email: "dk@bananas.com", 
+        bio: "A powerful banana-loving ape with devastating punches who was an old rival of Mario before becoming an ally.", 
+        img: "img/donkey-kong-card.png" 
+    },
+    { 
+        name: "Diddy Kong", 
+        age: 16, 
+        specialist: "Fast & Agile Explorer", 
+        city: "DK Island", 
+        email: "diddy@bananas.com", 
+        bio: "Donkey Kong's small and enthusiastic friend, who uses jetpacks and peanut popguns in battle.", 
+        img: "img/diddy-kong-card.png" 
+    },
+    { 
+        name: "King Boo", 
+        age: 200, 
+        specialist: "King of Ghosts", 
+        city: "Paranormal Dimension", 
+        email: "kingboo@ghosts.com", 
+        bio: "Leader of the ghosts and Luigi's arch-nemesis, possessing the power to trap heroes inside magical paintings.", 
+        img: "img/king-boo-card.png" 
+    },
+    { 
+        name: "Kamek", 
+        age: 60, 
+        specialist: "Advisor & Sorcerer", 
+        city: "Bowser's Castle", 
+        email: "kamek@magic.com", 
+        bio: "An old sorcerer who raised Bowser, using his magic wand to enlarge enemies and alter the course of battles.", 
+        img: "img/kamek-card.png" 
+    }
+];
+
+const container = document.getElementById('cardsContainer');
+
+function renderCards() {
+    let cardsHTML = '';
+    
+    for (let i = 0; i < persons.length; i++) {
+        let p = persons[i];
+        cardsHTML += `
+            <div class="card">
+                <div class="card-inner">
+                    <!-- Front Card: -->
+                    <div class="card-front">
+                        <img src="${p.img}" alt="${p.name}">
+                    </div>
+                    
+                    <!-- Back Card:-->
+                    <div class="card-back">
+                        <div>
+                            <h3>${p.name}</h3>
+                            <p><strong>Age:</strong> ${p.age}</p>
+                            <p><strong>Specialist:</strong> ${p.specialist}</p>
+                            <p><strong>City:</strong> ${p.city}</p>
+                            <p><strong>Email:</strong> ${p.email}</p>
+                            <p><strong>Bio:</strong> ${p.bio}</p>
+                        </div>
+                        <a href="mailto:${p.email}" class="btn-details">View More Details</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = cardsHTML;
+}
+
+renderCards();
 
 const scrollBtn = document.getElementById('scrollBtn');
 const marioAudio = document.getElementById('marioAudio');
@@ -71,7 +274,9 @@ scrollBtn.addEventListener('click', () => {
 });
         
      document.getElementById("scrollBtn").innerHTML += `Scroll Down ↓`;
-    
+          document.getElementById("description") .innerHTML="Explore the unique character cards from the Mario universe featuring custom designs, numbers, and colors."
+       document.getElementById("sub-title") .innerHTML="Character Cards"
+           document.getElementById("main-title") .innerHTML="Super Mario Collection"
          document.getElementById("homeLink") .innerHTML="Home"
               document.getElementById("aboutLink") .innerHTML="About"
                    document.getElementById("contactLink") .innerHTML="contact"

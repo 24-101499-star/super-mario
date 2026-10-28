@@ -280,3 +280,185 @@ header nav img:hover {
             top: -6px;
 
          }
+
+
+
+      .s-3 {
+    width: 100%;
+    background-image: url(img/Whimsical\ Mushroom\ Kingdom\ Vista\ 1.jpg);
+    margin-top: 260px;
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        
+   
+}
+
+
+.cards-container {
+    position: relative;
+    z-index: 3;
+    display: grid;
+     grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+   padding: 0 60px 0 60px;
+    margin: 0 auto;
+    margin-top: 70PX;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+}
+
+.card {
+    height: 490px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    border-radius: 20px;
+}
+
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.card-front {
+    background-color: transparent;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.card-back {
+    background-image: url('Gemini_Generated_Image_.jfif');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    color: #ffffff;
+}
+
+.card-back h3 {
+    font-family: 'Luckiest Guy', cursive;
+    color: #ffe066;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.card-back p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.78rem; 
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.card-back p strong {
+    color: #ffcc00;
+}
+
+.btn-details {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #e52521;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 0.88rem;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    transition: background-color 0.2s, transform 0.2s;
+    box-sizing: border-box;
+  
+    margin-bottom: 12px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.btn-details:hover {
+    background-color: #ff4d4d;
+    transform: scale(1.02);
+}
+
+.s-3 .sub-title {
+    font-family: 'Fredoka', sans-serif;
+    display: block;
+    color: #d80913a5; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    margin-top: 100px;
+}
+
+
+.s-3 .main-title {
+    font-family: 'Luckiest Guy', cursive;
+    color: #ffffff; 
+    font-size:50px;
+    letter-spacing: 2px;
+    margin: 0 0 12px 0;
+}
+
+
+.s-3 .description {
+    font-family: 'Fredoka', sans-serif;
+    color: #b3b3b3;
+    font-size: 1.05rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+        
+
+ footer{
+    width: 100%;
+    height: 100vh;
+ }
+
+
+  footer img{
+    width: 100%;
+    margin-top: 170PX;
+  }
