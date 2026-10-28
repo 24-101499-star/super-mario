@@ -34,17 +34,24 @@
  
         <section id="heroSection" class="hero-section">
 
-        <div>
-                <img src="img/Object_imgupscaler.ai_General_2K (1) 1.png" alt="">
+        <div class="iiii">
+                <img class="i"
+                src="img/Object_imgupscaler.ai_General_2K (1) 1.png" alt="">
      
         <a class="scroll-down-btn" id="scrollBtn" type="button">
-            <img  class="img"
-            src="img/Object.png" alt="">
-            Scroll Down ↓
+            <img  class="img"src="img/Object.png" alt="">
+           
         </a>
         </div>
         <audio id="marioAudio" src="img/Super Mario Bros. Theme Song.mp3" preload="auto"></audio>
         </section>
+
+        <section class="s-2">
+            <img src="img/Whimsical Terracotta Brick Platform 1.png" alt="" srcset="">
+            
+        </section>
+       
+     
     <script>
 
 const scrollBtn = document.getElementById('scrollBtn');
@@ -62,7 +69,9 @@ scrollBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
-
+        
+     document.getElementById("scrollBtn").innerHTML += `Scroll Down ↓`;
+    
          document.getElementById("homeLink") .innerHTML="Home"
               document.getElementById("aboutLink") .innerHTML="About"
                    document.getElementById("contactLink") .innerHTML="contact"
@@ -107,7 +116,6 @@ scrollBtn.addEventListener('click', () => {
             }, 1000);
     });
     
-
     </script>
 </body>
 </html>
