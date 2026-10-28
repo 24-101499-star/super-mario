@@ -1,0 +1,255 @@
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow-x: hidden;
+
+    }
+    .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999; 
+    transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+
+    .video-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; 
+    }
+
+    .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    background-color: #000;
+    z-index: 9999;
+    }
+
+
+    .video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    transform: scale(1.2); 
+    }
+    .hero-section {
+    width: 100%;
+    height: 100vh; 
+    background-image: url('img/361bef1e35d914898b4cb97b5721931b\ 2.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    }
+
+    .hero-section div{
+        position: absolute;
+        top: 130px;       
+        right: 390px;       
+             display: flex;
+             flex-direction: column;
+             gap: 20%;
+             height: 50%;
+        max-width: 250px;
+        z-index: 10; 
+        animation: marioJump 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        animation-delay: 60s
+    }
+    @keyframes marioJump {
+        0% {
+            opacity: 0;
+            transform: translateY(-150px) scale(0.3);
+        }
+        70% {
+            opacity: 1;
+            transform: translateY(15px) scale(1.1, 0.9); 
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+
+  
+
+#marioScrollBtn:hover {
+  background-color: #e52521;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 4px 8px 0px #000;
+}
+
+#marioScrollBtn:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+
+header {
+    position: absolute;
+    width:90%;
+    background: linear-gradient(135deg, #cc1111b6 0%, #8b0000c4 100%);
+    border: 1px solid #0000002d;
+    border-radius: 12px;
+    top: 0;
+    height: fit-content;
+    z-index: 1000;
+    margin-top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+
+
+header nav {
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    gap: 70%;
+}
+
+header nav img {
+    height: 48px; 
+    width: auto;
+    object-fit: contain;
+   
+    transition: transform 0.2s ease;
+}
+
+header nav img:hover {
+    transform: scale(1.08) rotate(-2deg); 
+}
+
+
+
+
+
+
+#marioNav img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 0px #000);
+}
+
+#marioMenu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+
+#homeLink, #aboutLink, #contactLink {
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15px;
+    text-shadow: 2px 2px #000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+
+#homeLink:hover {
+    color: #ffcc00;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #ffcc00;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 0 #000;
+}
+
+#aboutLink:hover {
+    color: #5c94fc; 
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #5c94fc;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 0 #000;
+}
+
+#contactLink:hover {
+    color: #4ade80; 
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #4ade80;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 0 #000;
+}
+
+.scroll-down-btn {
+         
+            top: 100px;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            padding: 5px;
+            background: transparent; 
+            border: none; 
+            text-align: center;
+            font-family: "Luckiest Guy", cursive;
+            font-weight: 700;
+            font-size: 16px;
+            color: white;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            text-shadow: 2px 2px #000; 
+            gap: 6px;
+            animation: marioBounce 1.5s infinite alternate;
+            text-decoration: none;
+        }
+
+        .scroll-down-btn .img {
+            width: 45px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.6));
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .scroll-down-btn:hover .img {
+            transform: scale(1.25) rotate(15deg); 
+        }
+
+        .scroll-down-btn:hover {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .scroll-down-btn:active {
+            transform: translateY(2px);
+        }
+
+      
+        @keyframes marioBounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(8px); }
+        }

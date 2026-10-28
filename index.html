@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Fredoka:wght@300..700&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="st.css">
+    <title>suber-mario</title>
+</head>
+<body>
+        <div id="videoOverlay" class="video-overlay">
+        <video id="introVideo" autoplay muted playsinline>
+            <source src="img/videoplayback.mp4" type="video/mp4">
+        </video>
+        <audio id="introAudio" preload="auto">
+            <source src="img/videoplayback.weba" type="audio/webm">
+        </audio>
+        <div id="soundNotice" class="sound-notice hidden"></div>
+        </div>
+
+      <header id="marioHeader">
+    <nav id="marioNav">
+   
+        <img src="img/Object_imgupscaler.ai_General_2K (1) 1.png" alt="logo">
+        <ul id="marioMenu">
+            <li><a href="#" id="homeLink"></a></li>
+            <li><a href="#" id="aboutLink"></a></li>
+            <li><a href="#" id="contactLink"></a></li>
+        </ul>
+    </nav>
+</header>
+ 
+        <section id="heroSection" class="hero-section">
+
+        <div>
+                <img src="img/Object_imgupscaler.ai_General_2K (1) 1.png" alt="">
+     
+        <a class="scroll-down-btn" id="scrollBtn" type="button">
+            <img  class="img"
+            src="img/Object.png" alt="">
+            Scroll Down ↓
+        </a>
+        </div>
+        <audio id="marioAudio" src="img/Super Mario Bros. Theme Song.mp3" preload="auto"></audio>
+        </section>
+    <script>
+
+const scrollBtn = document.getElementById('scrollBtn');
+const marioAudio = document.getElementById('marioAudio');
+
+scrollBtn.addEventListener('click', () => {
+  
+    marioAudio.currentTime = 0; 
+    marioAudio.play().catch(error => {
+        console.log("Audio play blocked by browser policy", error);
+    });
+
+    window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+});
+
+         document.getElementById("homeLink") .innerHTML="Home"
+              document.getElementById("aboutLink") .innerHTML="About"
+                   document.getElementById("contactLink") .innerHTML="contact"
+                        document.getElementById("homeLink") .innerHTML="Home"
+            const introVideo = document.getElementById('introVideo');
+            const introAudio = document.getElementById('introAudio');
+            const videoOverlay = document.getElementById('videoOverlay');
+            const soundNotice = document.getElementById('soundNotice');
+
+            function playSyncedAudio() {
+            introAudio.currentTime = introVideo.currentTime;
+            
+            introAudio.play().then(() => {
+            
+                if (soundNotice) soundNotice.classList.add('hidden');
+            }).catch(error => {
+                if (soundNotice) soundNotice.classList.remove('hidden');
+            });
+            }
+
+            introVideo.addEventListener('play', () => {
+            playSyncedAudio();
+            });
+
+            document.addEventListener('click', () => {
+            if (introAudio.paused && !introVideo.ended) {
+                playSyncedAudio();
+            }
+            });
+
+
+            introVideo.addEventListener('seeking', () => {
+            introAudio.currentTime = introVideo.currentTime;
+            });
+
+            introVideo.addEventListener('ended', () => {
+            introAudio.pause(); 
+            videoOverlay.classList.add('fade-out');
+
+            setTimeout(() => {
+                videoOverlay.style.display = 'none';
+            }, 1000);
+    });
+    
+
+    </script>
+</body>
+</html>
