@@ -82,7 +82,7 @@
         max-width: 250px;
         z-index: 10; 
         animation: marioJump 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        animation-delay: 53s
+        animation-delay: 52s
     }
     @keyframes marioJump {
         0% {
